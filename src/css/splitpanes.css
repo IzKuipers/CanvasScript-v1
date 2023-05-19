@@ -1,0 +1,17 @@
+.default-theme.splitpanes--vertical > .splitpanes__splitter,
+.default-theme .splitpanes--vertical > .splitpanes__splitter {
+  border-left: #222 1px solid !important;
+  border-right: #222 1px solid !important;
+  border-top: none;
+  border-bottom: none;
+  background-color: #111 !important;
+}
+
+.default-theme.splitpanes--vertical > .splitpanes__splitter::before,
+.default-theme .splitpanes--vertical > .splitpanes__splitter::before {
+  background-color: #555 !important;
+  margin-left: 0 !important;
+}
+.splitpanes.default-theme .splitpanes__pane {
+  background-color: #111 !important;
+}

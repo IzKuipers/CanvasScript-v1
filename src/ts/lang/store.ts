@@ -58,7 +58,7 @@ export class Parser {
 
       if (type != param.type)
         throw new CanvasError(
-          `Parameter ${param.name} has invalid type of ${type} (must be ${param.type})`,
+          `Parameter "${param.name}" has invalid type of "${type}" (must be "${param.type}")`,
           this.lang
         );
 
@@ -68,7 +68,9 @@ export class Parser {
     keywordData.function(parsed);
   }
 
-  getType(segment: string): "number" | "boolean" | "string" {
+  getType(segment: string): "number" | "boolean" | "string" | "unknown" {
+    if (!segment) return "unknown";
+
     if (segment.startsWith("#")) return "string";
 
     if ("true|false".includes(segment)) return "boolean";
