@@ -1,19 +1,29 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { CanvasScript } from "./ts/engine/main";
+  import { CanvasScriptLang } from "./ts/lang/main";
+  import { writable } from "svelte/store";
 
   let canvas: HTMLCanvasElement;
+  let content = writable<string>("");
+  let lang: CanvasScriptLang;
+  let engine: CanvasScript;
 
   onMount(() => {
-    const engine = new CanvasScript(canvas);
+    engine = new CanvasScript(canvas);
+    lang = new CanvasScriptLang($content, engine);
+  });
 
-    engine.line(10, 10, 30, 30);
-    engine.setColor("#f0f");
-    engine.rect(true, 30, 30, 60, 60);
+  content.subscribe((v) => {
+    if (!v || !canvas) return;
+
+    engine = new CanvasScript(canvas);
+    lang = new CanvasScriptLang(v, engine);
   });
 </script>
 
 <canvas bind:this={canvas} />
+<textarea bind:value={$content} cols="80" rows="25" />
 
 <style scoped>
   canvas {

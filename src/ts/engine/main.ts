@@ -6,7 +6,10 @@ export class CanvasScript extends CanvasMutator {
     super();
 
     if (!target)
-      throw new CanvasError("Can't initialize class without valid <canvas>");
+      throw new CanvasError(
+        "Can't initialize class without valid <canvas>",
+        null
+      );
 
     this.target = target;
 

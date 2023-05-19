@@ -1,6 +1,6 @@
 export interface Keyword {
   params: Param[];
-  function: (params: ParsedParams) => boolean;
+  function: (params: ParsedParams) => void | boolean;
 }
 
 export interface Param {
