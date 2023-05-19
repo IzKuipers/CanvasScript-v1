@@ -4,11 +4,11 @@ export interface Keyword {
 }
 
 export interface Param {
-  type: "number" | "string" | "boolean";
+  type: ParamType;
   fillToEnd?: boolean;
   name: string;
 }
 
 export type ParsedParams = { [key: string]: number | string | boolean };
 
-export type ParamType = "number" | "string" | "boolean";
+export type ParamType = "number" | "boolean" | "string" | "unknown" | "hex";

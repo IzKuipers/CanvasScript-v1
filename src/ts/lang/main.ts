@@ -25,7 +25,7 @@ export class CanvasScriptLang {
       try {
         this.parser.evaluate(this.lines[i]);
       } catch (e) {
-        console.error(e);
+        console.log(e.message);
       }
     }
   }

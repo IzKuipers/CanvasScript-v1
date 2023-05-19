@@ -5,8 +5,6 @@ export const Err = writable<{ message: string; line: number; seg: number }>(
   null
 );
 
-Err.subscribe((v) => console.log(v));
-
 export class CanvasError extends Error {
   constructor(message: string, context: CanvasScriptLang) {
     Err.set({ message, line: context.lineIdx + 1, seg: context.segIdx + 1 });

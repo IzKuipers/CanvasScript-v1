@@ -1,5 +1,5 @@
 import { CanvasError } from "../engine/error";
-import type { Keyword, Param, ParsedParams } from "./interface";
+import type { Keyword, Param, ParamType, ParsedParams } from "./interface";
 import Background from "./keywords/bg";
 import Color from "./keywords/color";
 import Line from "./keywords/line";
@@ -29,7 +29,7 @@ export class Parser {
     if (line.includes("  "))
       throw new CanvasError(`Repeated spaces are illegal`, this.lang);
 
-    const split = line.replaceAll("  ", " ").split(" ");
+    const split = line.split(" ");
     const keyword = split[0].trim().toLowerCase();
     const keywordData = this.keywords[keyword] as Keyword;
 
@@ -68,27 +68,43 @@ export class Parser {
     keywordData.function(parsed);
   }
 
-  getType(segment: string): "number" | "boolean" | "string" | "unknown" {
+  getType(segment: string): ParamType {
+    try {
+      if (typeof JSON.parse(segment) == "string") return "string";
+    } catch {
+      console.log("not a string");
+    }
+
     if (!segment) return "unknown";
 
-    if (segment.startsWith("#")) return "string";
+    if (segment.startsWith("#") && segment.length > 1) return "hex";
 
     if ("true|false".includes(segment)) return "boolean";
 
     try {
-      parseInt(segment);
+      const x = parseInt(segment) as any;
 
-      return "number";
+      return Number.isNaN(x) ? "unknown" : "number";
     } catch {
-      return "string";
+      return "unknown";
     }
   }
 
-  parseLiteralValue(segment: string): string | number | boolean {
+  parseLiteralValue(segment: string): string | number | boolean | null {
     const type = this.getType(segment);
 
-    if (type == "boolean") return segment == "true";
-    if (type == "number") return parseInt(segment);
-    if (type == "string") return segment;
+    const values = {
+      boolean: segment == "true",
+      number: parseInt(segment),
+      string: (() => {
+        try {
+          return JSON.parse(segment);
+        } catch {}
+      })(),
+      hex: segment,
+      unknown: null,
+    };
+
+    return values[type];
   }
 }

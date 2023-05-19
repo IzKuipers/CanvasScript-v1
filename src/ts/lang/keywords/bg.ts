@@ -7,7 +7,7 @@ export default function Background(lang: CanvasScriptLang): Keyword {
   return {
     params: [
       {
-        type: "string",
+        type: "hex",
         name: "color",
       },
     ],

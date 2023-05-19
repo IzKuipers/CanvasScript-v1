@@ -7,7 +7,7 @@ export default function Color(lang: CanvasScriptLang): Keyword {
   return {
     params: [
       {
-        type: "string",
+        type: "hex",
         name: "color",
       },
     ],

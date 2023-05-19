@@ -38,7 +38,7 @@
   {#if $Err}
     <div>{$Err.message}</div>
     <div class="right">
-      <div>Ln {$Err.line}, Seg {$Err.seg}</div>
+      <div>Error in {$Err.line}, {$Err.seg}</div>
     </div>
   {/if}
 </div>
