@@ -1,5 +1,5 @@
 import type { CanvasScript } from "../engine/main";
-import { Parser } from "./store";
+import { Parser } from "./parser";
 
 export class CanvasScriptLang {
   engine: CanvasScript;

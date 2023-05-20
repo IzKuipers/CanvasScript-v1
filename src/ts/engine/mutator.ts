@@ -7,11 +7,21 @@ export class CanvasMutator {
 
   constructor() {}
 
-  line(startX: number, startY: number, endX: number, endY: number) {
+  line(
+    width: number,
+    startX: number,
+    startY: number,
+    endX: number,
+    endY: number
+  ) {
     this.context.moveTo(startX, startY);
     this.context.lineTo(endX, endY);
 
+    const oWidth = this.context.lineWidth;
+
+    this.context.lineWidth = width;
     this.context.stroke();
+    this.context.lineWidth = oWidth;
   }
 
   rect(
@@ -24,6 +34,23 @@ export class CanvasMutator {
     if (filled)
       this.context.fillRect(startX, startY, endX - startX, endY - startY);
     else this.context.strokeRect(startX, startY, endX - startX, endY - startY);
+  }
+
+  eclipse(filled: boolean, x: number, y: number, diameter: number) {
+    const fillColor = this.foreground;
+
+    this.setColor(this.background);
+    this.context.arc(
+      x + diameter / 2,
+      y + diameter / 2,
+      diameter / 2,
+      0,
+      Math.PI * 2
+    );
+    this.setColor(fillColor);
+
+    if (filled) this.context.fill();
+    else this.context.stroke();
   }
 
   setColor(color: string) {
@@ -42,7 +69,7 @@ export class CanvasMutator {
   size(width: number, height: number) {
     this.target.width = width;
     this.target.height = height;
-    this.setBackground("#000000");
-    this.setColor("#ffffff");
+    this.setBackground(this.background);
+    this.setColor(this.foreground);
   }
 }

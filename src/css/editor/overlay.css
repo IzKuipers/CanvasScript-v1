@@ -1,0 +1,16 @@
+@import url("./overlay/highlight.css");
+
+div.editor-overlay div.line * {
+  display: inline-block;
+}
+
+div.editor-overlay {
+  pointer-events: none;
+  background-color: transparent !important;
+  color: #fff;
+  white-space: pre;
+}
+
+div.editor-overlay div.line * {
+  color: #ccc;
+}

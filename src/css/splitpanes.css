@@ -14,4 +14,5 @@
 }
 .splitpanes.default-theme .splitpanes__pane {
   background-color: #111 !important;
+  position: relative;
 }

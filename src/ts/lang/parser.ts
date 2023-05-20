@@ -1,6 +1,7 @@
 import { CanvasError } from "../engine/error";
 import type { Keyword, Param, ParamType, ParsedParams } from "./interface";
 import Background from "./keywords/bg";
+import Circle from "./keywords/circle";
 import Color from "./keywords/color";
 import Line from "./keywords/line";
 import Rect from "./keywords/rect";
@@ -20,6 +21,7 @@ export class Parser {
       color: Color(this.lang),
       line: Line(this.lang),
       rect: Rect(this.lang),
+      circle: Circle(this.lang),
     };
   }
 
@@ -79,7 +81,7 @@ export class Parser {
 
     if (segment.startsWith("#") && segment.length > 1) return "hex";
 
-    if ("true|false".includes(segment)) return "boolean";
+    if (segment == "true" || segment == "false") return "boolean";
 
     try {
       const x = parseInt(segment) as any;

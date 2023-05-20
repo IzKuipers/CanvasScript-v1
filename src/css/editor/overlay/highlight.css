@@ -1,0 +1,19 @@
+div.editor-overlay div.segment.iskey {
+  color: rgb(231, 123, 123);
+}
+
+div.editor-overlay div.segment.type-hex {
+  color: rgb(225, 181, 99);
+}
+
+div.editor-overlay div.segment.type-number {
+  color: rgb(128, 200, 128);
+}
+
+div.editor-overlay div.segment.type-boolean {
+  color: rgb(205, 255, 255);
+}
+
+div.editor-overlay div.segment.type-unknown:not(.iskey) {
+  color: rgb(255, 151, 255);
+}

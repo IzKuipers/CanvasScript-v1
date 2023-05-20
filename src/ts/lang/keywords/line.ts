@@ -2,6 +2,7 @@ import type { Keyword } from "../interface";
 import type { CanvasScriptLang } from "../main";
 
 type Params = {
+  width: number;
   start_x: number;
   start_y: number;
   end_x: number;
@@ -11,6 +12,10 @@ type Params = {
 export default function Line(lang: CanvasScriptLang): Keyword {
   return {
     params: [
+      {
+        type: "number",
+        name: "width",
+      },
       {
         type: "number",
         name: "start_x",
@@ -29,6 +34,6 @@ export default function Line(lang: CanvasScriptLang): Keyword {
       },
     ],
     function: (p: Params) =>
-      lang.engine.line(p.start_x, p.start_y, p.end_x, p.end_y),
+      lang.engine.line(p.width, p.start_x, p.start_y, p.end_x, p.end_y),
   };
 }
