@@ -15,5 +15,5 @@
 <Splitpanes class="mainframe">
   <TextArea {content} {lang} />
   <Display {content} bind:lang />
-</Splitpanes>
-<Statusbar />
+</Splitpanes><!-- 
+<Statusbar /> -->

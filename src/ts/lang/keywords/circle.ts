@@ -3,6 +3,7 @@ import type { CanvasScriptLang } from "../main";
 
 type Params = {
   filled: boolean;
+  thickness: number;
   x: number;
   y: number;
   diameter: number;
@@ -14,6 +15,10 @@ export default function Circle(lang: CanvasScriptLang): Keyword {
       {
         type: "boolean",
         name: "filled",
+      },
+      {
+        type: "number",
+        name: "thickness",
       },
       {
         type: "number",
@@ -29,6 +34,6 @@ export default function Circle(lang: CanvasScriptLang): Keyword {
       },
     ],
     function: (p: Params) =>
-      lang.engine.eclipse(p.filled, p.x, p.y, p.diameter),
+      lang.engine.eclipse(p.filled, p.thickness, p.x, p.y, p.diameter),
   };
 }

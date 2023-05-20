@@ -3,6 +3,7 @@ import type { CanvasScriptLang } from "../main";
 
 type Params = {
   filled: boolean;
+  thickness: number;
   start_x: number;
   start_y: number;
   end_x: number;
@@ -15,6 +16,10 @@ export default function Rect(lang: CanvasScriptLang): Keyword {
       {
         type: "boolean",
         name: "filled",
+      },
+      {
+        type: "number",
+        name: "thickness",
       },
       {
         type: "number",
@@ -34,6 +39,13 @@ export default function Rect(lang: CanvasScriptLang): Keyword {
       },
     ],
     function: (p: Params) =>
-      lang.engine.rect(p.filled, p.start_x, p.start_y, p.end_x, p.end_y),
+      lang.engine.rect(
+        p.filled,
+        p.thickness,
+        p.start_x,
+        p.start_y,
+        p.end_x,
+        p.end_y
+      ),
   };
 }

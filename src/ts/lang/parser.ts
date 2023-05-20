@@ -4,6 +4,7 @@ import Background from "./keywords/bg";
 import Circle from "./keywords/circle";
 import Color from "./keywords/color";
 import Line from "./keywords/line";
+import Multiplier from "./keywords/mult";
 import Rect from "./keywords/rect";
 import Size from "./keywords/size";
 import type { CanvasScriptLang } from "./main";
@@ -22,12 +23,13 @@ export class Parser {
       line: Line(this.lang),
       rect: Rect(this.lang),
       circle: Circle(this.lang),
+      mult: Multiplier(this.lang),
     };
   }
 
   evaluate(line: string) {
-    if (!line.length) return;
-
+    if (line.startsWith("@")) return this.lang.vars.parse(line);
+    if (!line.length || line.startsWith("'")) return;
     if (line.includes("  "))
       throw new CanvasError(`Repeated spaces are illegal`, this.lang);
 
@@ -58,7 +60,7 @@ export class Parser {
 
       this.lang.segIdx = idx;
 
-      if (type != param.type)
+      if (type != param.type && param.type != "any")
         throw new CanvasError(
           `Parameter "${param.name}" has invalid type of "${type}" (must be "${param.type}")`,
           this.lang
@@ -73,9 +75,7 @@ export class Parser {
   getType(segment: string): ParamType {
     try {
       if (typeof JSON.parse(segment) == "string") return "string";
-    } catch {
-      console.log("not a string");
-    }
+    } catch {}
 
     if (!segment) return "unknown";
 
@@ -97,7 +97,7 @@ export class Parser {
 
     const values = {
       boolean: segment == "true",
-      number: parseInt(segment),
+      number: parseInt(segment) * (this.lang.engine.multiplier || 1),
       string: (() => {
         try {
           return JSON.parse(segment);

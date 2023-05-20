@@ -1,9 +1,9 @@
 <script lang="ts">
   import type { Writable } from "svelte/store";
   import type { OverlayOutput } from "../../ts/editor/interface";
-  import type { CanvasScript } from "../../ts/engine/main";
   import { CanvasScriptLang } from "../../ts/lang/main";
   import { Parser } from "../../ts/lang/parser";
+  import Line from "./Overlay/Line.svelte";
 
   export let content: Writable<string>;
   export let lang: CanvasScriptLang;
@@ -38,16 +38,7 @@
 <div class="editor-overlay">
   {#if parser && output && lang}
     {#each output as line}
-      <div class="line">
-        {#each line as seg}
-          <div
-            class="segment {seg.class} type-{seg.type}"
-            class:iskey={!!parser.keywords[seg.content]}
-          >
-            {seg.content}&nbsp;
-          </div>
-        {/each}
-      </div>
+      <Line {line} {parser} />
     {/each}
   {/if}
 </div>

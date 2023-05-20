@@ -1,7 +1,7 @@
 .default-theme.splitpanes--vertical > .splitpanes__splitter,
 .default-theme .splitpanes--vertical > .splitpanes__splitter {
   border: none !important;
-  background-color: transparent !important;
+  background-color: #fff !important;
 }
 
 .default-theme.splitpanes--vertical > .splitpanes__splitter::before,
@@ -10,6 +10,6 @@
   margin-left: 0 !important; */
 }
 .splitpanes.default-theme .splitpanes__pane {
-  background-color: #eee !important;
+  background-color: #fff !important;
   position: relative;
 }

@@ -1,0 +1,48 @@
+' CanvasScript Benchmark
+' Created by IzKuipers on May 20th, 2023
+' 
+' https://github.com/IzKuipers/CanvasScript-v1
+
+@s 800
+@mult 10
+@bg #010
+@fg #fff
+@lime #0f0
+@green #0a0
+@magenta #f0f
+@yellow #ff0
+@purple #a0f
+
+size $s $s
+bg #010
+
+mult $mult
+
+color $purple
+circle true 0 7 7 66 66
+
+color $lime
+circle true 0 10 10 60
+
+color $magenta
+circle true 0 20 20 40
+line 5 17 17 63 63
+
+color $yellow
+line 5 63 17 17 63
+circle true 0 25 25 30
+
+color $lime
+circle true 0 30 30 20
+
+color $green
+rect true 0 34 34 46 46
+
+color $fg
+line 2 14 14 66.5 66.5
+line 2 66.5 14 14 66.5
+line 2 40 3 40 78
+line 2 3 40 78 40
+
+circle false 2 3 3 74
+@green #0f0

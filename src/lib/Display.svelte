@@ -25,7 +25,7 @@
 </script>
 
 {#if content}
-  <Pane minSize={25} maxSize={75}>
+  <Pane minSize={25} maxSize={50} size={25}>
     <div class="content">
       <canvas bind:this={canvas} />
     </div>

@@ -4,10 +4,13 @@
 
 <div class="statusbar">
   {#if $Err}
-    <div class="right">
-      <div class="error">
-        {$Err.message} (line {$Err.line}, segment {$Err.seg})
-      </div>
+    <div class="error">
+      {$Err.message} (line {$Err.line}, segment {$Err.seg})
     </div>
   {/if}
+  <div class="right">
+    <button class="material-icons-round">delete</button>
+    <button class="material-icons-round">save</button>
+    <button class="material-icons-round">archive</button>
+  </div>
 </div>

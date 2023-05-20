@@ -1,5 +1,5 @@
 div.statusbar {
-  background-color: #ddd;
+  background-color: #e7e7e7;
   display: flex;
   gap: 10px;
   height: 50px;
@@ -9,10 +9,14 @@ div.statusbar {
   font-size: 15px;
   font-family: "Source Code Pro", monospace;
   line-height: 30px;
-  margin: 20px;
-  margin-top: 10px;
+  /* margin: 20px;
+  margin-top: 10px; */
   border-radius: 20px;
-  box-shadow: 0 3px 5px #0006;
+  box-shadow: 0 2.5px 7.5px #0008;
+  position: absolute;
+  width: calc(100% - 60px);
+  left: 40px;
+  bottom: 40px;
 }
 
 div.statusbar > * {
@@ -22,7 +26,23 @@ div.statusbar > * {
 div.statusbar div.right {
   display: flex;
   justify-content: end;
-  gap: 10px;
+  gap: 5px;
+}
+
+div.statusbar div.right > button {
+  font-size: 24px;
+  color: #333;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+  margin: -5px 0;
+  padding: 0;
+}
+
+div.statusbar div.right > button:hover {
+  background-color: #ccc;
 }
 
 div.statusbar div.error {

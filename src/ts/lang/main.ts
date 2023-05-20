@@ -1,13 +1,9 @@
 import { writable } from "svelte/store";
 import type { CanvasScript } from "../engine/main";
+import { Variables } from "../var/main";
 import { Parser } from "./parser";
-import { getKeywordOfLine } from "./get";
 
 export const currentLine = writable<string>("");
-
-currentLine.subscribe((v) => {
-  console.log(v, getKeywordOfLine(v));
-});
 
 export class CanvasScriptLang {
   engine: CanvasScript;
@@ -15,13 +11,13 @@ export class CanvasScriptLang {
   lines: string[] = [];
   lineIdx = 0;
   segIdx = 0;
+  vars: Variables;
 
   constructor(context: string, runtime: CanvasScript) {
     this.lines = context.split("\n");
     this.engine = runtime;
-
     this.engine.setBackground("#000000");
-
+    this.vars = new Variables();
     this.parser = new Parser(this);
 
     this.parse();
@@ -35,10 +31,8 @@ export class CanvasScriptLang {
       currentLine.set(this.lines[i]);
 
       try {
-        this.parser.evaluate(this.lines[i]);
-      } catch (e) {
-        console.log(e.message);
-      }
+        this.parser.evaluate(this.vars.replace(this.lines[i]));
+      } catch {}
     }
   }
 }

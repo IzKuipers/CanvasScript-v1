@@ -17,3 +17,7 @@ div.editor-overlay div.segment.type-boolean {
 div.editor-overlay div.segment.type-unknown:not(.iskey) {
   color: rgb(255, 151, 255);
 }
+
+div.editor-overlay div.line.iscomment * {
+  color: #aaa !important;
+}
