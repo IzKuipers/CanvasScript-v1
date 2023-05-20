@@ -6,6 +6,7 @@
   import { Err } from "./ts/engine/error";
   import Display from "./lib/Display.svelte";
   import type { CanvasScriptLang } from "./ts/lang/main";
+  import Statusbar from "./lib/Statusbar.svelte";
 
   let content = writable<string>("");
   let lang: CanvasScriptLang;
@@ -15,11 +16,4 @@
   <TextArea {content} {lang} />
   <Display {content} bind:lang />
 </Splitpanes>
-<div class="statusbar">
-  {#if $Err}
-    <div>{$Err.message}</div>
-    <div class="right">
-      <div>Error in {$Err.line}, {$Err.seg}</div>
-    </div>
-  {/if}
-</div>
+<Statusbar />

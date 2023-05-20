@@ -1,5 +1,13 @@
+import { writable } from "svelte/store";
 import type { CanvasScript } from "../engine/main";
 import { Parser } from "./parser";
+import { getKeywordOfLine } from "./get";
+
+export const currentLine = writable<string>("");
+
+currentLine.subscribe((v) => {
+  console.log(v, getKeywordOfLine(v));
+});
 
 export class CanvasScriptLang {
   engine: CanvasScript;
@@ -22,6 +30,10 @@ export class CanvasScriptLang {
   parse() {
     for (let i = 0; i < this.lines.length; i++) {
       this.lineIdx = i;
+      this.segIdx = 0;
+
+      currentLine.set(this.lines[i]);
+
       try {
         this.parser.evaluate(this.lines[i]);
       } catch (e) {

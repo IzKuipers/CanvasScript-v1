@@ -1,17 +1,17 @@
 div.editor-overlay div.segment.iskey {
-  color: rgb(231, 123, 123);
+  color: rgb(255, 91, 91);
 }
 
 div.editor-overlay div.segment.type-hex {
-  color: rgb(225, 181, 99);
+  color: rgb(230, 150, 0);
 }
 
 div.editor-overlay div.segment.type-number {
-  color: rgb(128, 200, 128);
+  color: rgb(73, 200, 73);
 }
 
 div.editor-overlay div.segment.type-boolean {
-  color: rgb(205, 255, 255);
+  color: rgb(78, 176, 176);
 }
 
 div.editor-overlay div.segment.type-unknown:not(.iskey) {

@@ -1,0 +1,44 @@
+div.statusbar {
+  background-color: #ddd;
+  display: flex;
+  gap: 10px;
+  height: 50px;
+  padding: 10px;
+  box-sizing: border-box;
+  color: #333;
+  font-size: 15px;
+  font-family: "Source Code Pro", monospace;
+  line-height: 30px;
+  margin: 20px;
+  margin-top: 10px;
+  border-radius: 20px;
+  box-shadow: 0 3px 5px #0006;
+}
+
+div.statusbar > * {
+  flex-grow: 1;
+}
+
+div.statusbar div.right {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+
+div.statusbar div.error {
+  padding: 5px 10px;
+  line-height: 20px;
+  box-sizing: border-box;
+  background-color: rgb(255, 147, 147);
+  border-radius: 10px;
+  color: rgb(186, 28, 28);
+  display: flex;
+  gap: 10px;
+  max-width: fit-content;
+}
+
+div.statusbar div.error::before {
+  content: "cancel";
+  font-family: "Material Icons Round";
+  font-size: 18px;
+}

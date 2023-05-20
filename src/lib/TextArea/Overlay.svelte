@@ -24,6 +24,7 @@
 
       for (let i = 0; i < split.length; i++) {
         const x = split[i].replace("&nbsp;", "");
+
         output[l].push({
           class: `seg-${x}`,
           type: parser.getType(x),
@@ -36,7 +37,7 @@
 
 <div class="editor-overlay">
   {#if parser && output && lang}
-    {#each output as line, i}
+    {#each output as line}
       <div class="line">
         {#each line as seg}
           <div

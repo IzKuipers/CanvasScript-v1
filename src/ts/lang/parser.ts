@@ -14,7 +14,7 @@ export class Parser {
   keywords = {};
 
   constructor(engine: CanvasScriptLang) {
-    this.lang = engine;
+    if (engine) this.lang = engine;
     this.keywords = {
       size: Size(this.lang),
       bg: Background(this.lang),
