@@ -28,6 +28,7 @@
           class: `seg-${x}`,
           type: parser.getType(x),
           content: x,
+          index: i,
         });
       }
     }

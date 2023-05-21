@@ -7,10 +7,10 @@ div.editor-overlay div.line * {
 div.editor-overlay {
   pointer-events: none;
   background-color: transparent !important;
-  color: #fff;
+  color: var(--fg);
   white-space: pre;
 }
 
 div.editor-overlay div.line * {
-  color: #ccc;
+  color: var(--fg);
 }

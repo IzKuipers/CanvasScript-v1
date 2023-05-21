@@ -1,22 +1,20 @@
 div.statusbar {
-  background-color: #e7e7e7;
+  background-color: var(--statusbar-bg);
   display: flex;
   gap: 10px;
   height: 50px;
   padding: 10px;
   box-sizing: border-box;
-  color: #333;
+  color: var(--fg);
   font-size: 15px;
   font-family: "Source Code Pro", monospace;
   line-height: 30px;
-  /* margin: 20px;
-  margin-top: 10px; */
   border-radius: 20px;
   box-shadow: 0 2.5px 7.5px #0008;
   position: absolute;
-  width: calc(100% - 60px);
-  left: 40px;
-  bottom: 40px;
+  width: calc(100% - 30px);
+  left: 20px;
+  bottom: 20px;
 }
 
 div.statusbar > * {
@@ -31,7 +29,7 @@ div.statusbar div.right {
 
 div.statusbar div.right > button {
   font-size: 24px;
-  color: #333;
+  color: var(--fg);
   width: 40px;
   height: 40px;
   border: none;
@@ -42,22 +40,25 @@ div.statusbar div.right > button {
 }
 
 div.statusbar div.right > button:hover {
-  background-color: #ccc;
+  background-color: var(--button-bg);
+}
+
+div.statusbar div.right > button:active {
+  background-color: var(--button-active-bg);
 }
 
 div.statusbar div.error,
 div.statusbar div.fine {
-  padding: 4px 10px;
+  padding: 5px 10px;
   line-height: 20px;
   box-sizing: border-box;
-  background-color: rgb(255, 147, 147);
+  background-color: var(--error-bg);
+  color: var(--error-fg);
   border-radius: 10px;
-  color: rgb(186, 28, 28);
   max-width: fit-content;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  border: currentColor 1px solid;
 }
 
 div.statusbar div.error *,
@@ -76,8 +77,8 @@ div.statusbar div.fine::before {
 }
 
 div.statusbar div.fine {
-  background-color: rgb(147, 255, 147);
-  color: rgb(28, 186, 28);
+  background-color: var(--ok-bg);
+  color: var(--ok-fg);
 }
 
 div.statusbar div.fine::before {

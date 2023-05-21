@@ -1,28 +1,28 @@
 div.editor-overlay div.segment.iskey {
-  color: rgb(255, 91, 91);
+  color: var(--red);
 }
 
 div.editor-overlay div.segment.type-hex {
-  color: rgb(230, 150, 0);
+  color: var(--orange);
 }
 
 div.editor-overlay div.segment.type-number {
-  color: rgb(73, 200, 73);
+  color: var(--lime);
 }
 
 div.editor-overlay div.segment.type-boolean {
-  color: rgb(78, 176, 176);
+  color: var(--blue);
 }
 
 div.editor-overlay div.segment.type-unknown:not(.iskey) {
-  color: rgb(151, 151, 151);
+  color: var(--fg);
 }
 
 div.editor-overlay div.segment.isvar,
 div.editor-overlay div.segment.issetter {
-  color: rgb(255, 151, 255) !important;
+  color: var(--magenta) !important;
 }
 
 div.editor-overlay div.line.iscomment * {
-  color: #aaa !important;
+  color: var(--comment) !important;
 }

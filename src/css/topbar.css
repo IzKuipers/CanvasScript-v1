@@ -1,0 +1,14 @@
+div.topbar {
+  height: 60px;
+  min-height: 60px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  color: var(--fg);
+  background-color: var(--bg);
+  font-family: "Poppins", sans-serif;
+}
+
+div.topbar h3.header {
+  margin: 0;
+  line-height: 40px;
+}

@@ -5,7 +5,7 @@ div.editor-overlay {
   box-sizing: border-box;
   resize: none;
   color: transparent;
-  caret-color: #666;
+  caret-color: var(--fg);
   font-family: "Source Code Pro", monospace;
   border: none;
   font-size: 20px;
@@ -19,14 +19,18 @@ div.editor-overlay {
   padding: 10px;
 }
 
+textarea.editor {
+  background-color: var(--bg);
+}
+
 div.editor-overlay {
   height: fit-content;
 }
 
 div.editor-wrapper {
   overflow-y: scroll;
-  background-color: #fff;
-  margin: 20px;
+  background-color: var(--bg);
+  margin: 10px;
   margin-right: 0;
   padding: 10px;
   width: calc(100% - 40px);

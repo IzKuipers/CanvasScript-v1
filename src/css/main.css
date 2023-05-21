@@ -1,12 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Round");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @import url("./splitpanes.css");
 @import url("./editor.css");
 @import url("./content.css");
 @import url("./statusbar.css");
-@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Round");
+@import url("./vars.css");
+@import url("./topbar.css");
 
 div#app {
-  background-color: #eee;
+  background-color: var(--sec-bg);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -18,8 +21,10 @@ body {
 
 div.mainframe {
   flex-grow: 1;
+  max-height: calc(100% - 60px);
 }
 
 * {
   outline: none !important;
+  transition: all 0.3s;
 }

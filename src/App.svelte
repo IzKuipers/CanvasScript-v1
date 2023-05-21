@@ -7,11 +7,13 @@
   import Display from "./lib/Display.svelte";
   import type { CanvasScriptLang } from "./ts/lang/main";
   import Statusbar from "./lib/Statusbar.svelte";
+  import TopBar from "./lib/TopBar.svelte";
 
   let content = writable<string>("");
   let lang: CanvasScriptLang;
 </script>
 
+<TopBar />
 <Splitpanes class="mainframe">
   <TextArea {content} {lang} />
   <Display {content} bind:lang />

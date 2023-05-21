@@ -12,13 +12,17 @@
   let iskey = false;
   let issetter = false;
 
-  onMount(() => {
+  onMount(update);
+
+  function update() {
     const c = seg.content;
     const key = seg.content.replace("$", "");
-    isvar = c.startsWith("$") && parser.lang.vars.get(key) != key;
-    issetter = c.startsWith("@");
     iskey = !!parser.keywords[c];
-  });
+    isvar = c.startsWith("$") && parser.lang.vars.get(key) != key;
+    issetter = c.startsWith("@") && seg.index == 0;
+  }
+
+  content.subscribe(() => setTimeout(update));
 </script>
 
 <div

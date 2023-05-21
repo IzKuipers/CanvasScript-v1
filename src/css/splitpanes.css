@@ -1,15 +1,17 @@
 .default-theme.splitpanes--vertical > .splitpanes__splitter,
 .default-theme .splitpanes--vertical > .splitpanes__splitter {
   border: none !important;
-  background-color: #fff !important;
+  background-color: var(--bg) !important;
 }
 
 .default-theme.splitpanes--vertical > .splitpanes__splitter::before,
-.default-theme .splitpanes--vertical > .splitpanes__splitter::before {
-  background-color: #ddd !important; /* 
-  margin-left: 0 !important; */
+.default-theme .splitpanes--vertical > .splitpanes__splitter::before,
+.default-theme.splitpanes--vertical > .splitpanes__splitter::after,
+.default-theme .splitpanes--vertical > .splitpanes__splitter::after {
+  display: none;
 }
+
 .splitpanes.default-theme .splitpanes__pane {
-  background-color: #fff !important;
+  background-color: var(--bg) !important;
   position: relative;
 }

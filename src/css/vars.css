@@ -1,0 +1,41 @@
+:root {
+  --bg: #fff;
+  --sec-bg: #eee;
+  --statusbar-bg: #e7e7e7;
+  --button-bg: #ccc;
+  --button-hover-bg: #ddd;
+  --button-active-bg: #bbb;
+  --fg: #333;
+  --red: rgb(255, 91, 91);
+  --orange: rgb(230, 150, 0);
+  --lime: rgb(73, 200, 73);
+  --blue: rgb(78, 176, 176);
+  --magenta: rgb(255, 151, 255);
+  --comment: #aba;
+  --error-bg: rgb(255, 147, 147);
+  --error-fg: rgb(186, 28, 28);
+  --ok-bg: rgb(147, 255, 147);
+  --ok-fg: rgb(16, 96, 16);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --bg: #222;
+    --sec-bg: #333;
+    --statusbar-bg: #373737;
+    --button-bg: #333;
+    --button-hover-bg: #444;
+    --button-active-bg: #222;
+    --fg: #ccc;
+    --red: rgb(255, 91, 91);
+    --orange: rgb(230, 150, 0);
+    --lime: rgb(73, 200, 73);
+    --blue: rgb(78, 176, 176);
+    --magenta: rgb(255, 151, 255);
+    --comment: #787;
+    --error-bg: rgb(91, 55, 55);
+    --error-fg: rgb(255, 106, 106);
+    --ok-bg: rgb(42, 65, 42);
+    --ok-fg: rgb(158, 255, 158);
+  }
+}
