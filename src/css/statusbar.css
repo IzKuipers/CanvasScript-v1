@@ -45,20 +45,41 @@ div.statusbar div.right > button:hover {
   background-color: #ccc;
 }
 
-div.statusbar div.error {
-  padding: 5px 10px;
+div.statusbar div.error,
+div.statusbar div.fine {
+  padding: 4px 10px;
   line-height: 20px;
   box-sizing: border-box;
   background-color: rgb(255, 147, 147);
   border-radius: 10px;
   color: rgb(186, 28, 28);
-  display: flex;
-  gap: 10px;
   max-width: fit-content;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  border: currentColor 1px solid;
 }
 
-div.statusbar div.error::before {
+div.statusbar div.error *,
+div.statusbar div.fine * {
+  vertical-align: middle;
+  line-height: 20px;
+}
+
+div.statusbar div.error::before,
+div.statusbar div.fine::before {
   content: "cancel";
   font-family: "Material Icons Round";
   font-size: 18px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+div.statusbar div.fine {
+  background-color: rgb(147, 255, 147);
+  color: rgb(28, 186, 28);
+}
+
+div.statusbar div.fine::before {
+  content: "check";
 }

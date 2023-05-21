@@ -62,7 +62,7 @@ export class Parser {
 
       if (type != param.type && param.type != "any")
         throw new CanvasError(
-          `Parameter "${param.name}" has invalid type of "${type}" (must be "${param.type}")`,
+          `${keyword}: "${param.name}" has to be of type ${param.type}, but got ${type}.`,
           this.lang
         );
 

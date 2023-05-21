@@ -5,7 +5,11 @@
 <div class="statusbar">
   {#if $Err}
     <div class="error">
-      {$Err.message} (line {$Err.line}, segment {$Err.seg})
+      <span> Line {$Err.line}: {$Err.message}</span>
+    </div>
+  {:else}
+    <div class="fine">
+      <span>No issues found</span>
     </div>
   {/if}
   <div class="right">
