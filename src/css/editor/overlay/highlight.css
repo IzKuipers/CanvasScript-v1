@@ -15,7 +15,12 @@ div.editor-overlay div.segment.type-boolean {
 }
 
 div.editor-overlay div.segment.type-unknown:not(.iskey) {
-  color: rgb(255, 151, 255);
+  color: rgb(151, 151, 151);
+}
+
+div.editor-overlay div.segment.isvar,
+div.editor-overlay div.segment.issetter {
+  color: rgb(255, 151, 255) !important;
 }
 
 div.editor-overlay div.line.iscomment * {

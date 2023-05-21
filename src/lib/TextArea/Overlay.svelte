@@ -13,7 +13,6 @@
 
   content.subscribe((v) => {
     output = [];
-
     parser = new Parser(lang);
 
     const lines = v.split("\n");
@@ -38,7 +37,7 @@
 <div class="editor-overlay">
   {#if parser && output && lang}
     {#each output as line}
-      <Line {line} {parser} />
+      <Line {line} {parser} {content} />
     {/each}
   {/if}
 </div>
