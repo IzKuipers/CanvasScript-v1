@@ -11,10 +11,10 @@
     <div class="fine">
       <span>No issues found</span>
     </div>
-  {/if}
+  {/if}<!-- 
   <div class="right">
     <button class="material-icons-round">delete</button>
     <button class="material-icons-round">save</button>
     <button class="material-icons-round">archive</button>
-  </div>
+  </div> -->
 </div>
