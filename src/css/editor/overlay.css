@@ -14,3 +14,9 @@ div.editor-overlay {
 div.editor-overlay div.line * {
   color: var(--fg);
 }
+
+div.editor-overlay div.line div.linenr {
+  position: absolute;
+  left: -3em;
+  opacity: 0.5;
+}

@@ -17,6 +17,7 @@ div.editor-overlay {
   width: 100%;
   min-height: 100%;
   padding: 0px;
+  margin-left: 3em;
 }
 
 textarea.editor {

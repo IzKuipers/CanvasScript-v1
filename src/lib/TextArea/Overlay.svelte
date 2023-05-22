@@ -37,8 +37,8 @@
 
 <div class="editor-overlay">
   {#if parser && output && lang}
-    {#each output as line}
-      <Line {line} {parser} {content} />
+    {#each output as line, i}
+      <Line {i} {line} {parser} {content} />
     {/each}
   {/if}
 </div>
