@@ -4,10 +4,6 @@
 
   export let id: string;
   export let data: Tab;
-
-  onMount(() => {
-    console.log(id);
-  });
 </script>
 
 <button class="tab">

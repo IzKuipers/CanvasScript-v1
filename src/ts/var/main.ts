@@ -13,10 +13,6 @@ import type { VariableStore } from "./interface";
 
 export const PublicVariableStore = writable<VariableStore>({});
 
-PublicVariableStore.subscribe((v) => {
-  console.table(v);
-});
-
 export class Variables {
   private store: Writable<VariableStore> = writable<VariableStore>({});
 

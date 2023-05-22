@@ -2,6 +2,7 @@ import { writable } from "svelte/store";
 import type { CanvasScript } from "../engine/main";
 import { Variables } from "../var/main";
 import { Parser } from "./parser";
+import { calculateExpressions } from "../calc/main";
 
 export const currentLine = writable<string>("");
 
@@ -31,7 +32,9 @@ export class CanvasScriptLang {
       currentLine.set(this.lines[i]);
 
       try {
-        this.parser.evaluate(this.vars.replace(this.lines[i]));
+        this.parser.evaluate(
+          calculateExpressions(this.vars.replace(this.lines[i]))
+        );
       } catch {}
     }
   }
