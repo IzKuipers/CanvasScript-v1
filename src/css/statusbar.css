@@ -13,7 +13,7 @@ div.statusbar {
   border-radius: 20px;
   box-shadow: 0 2.5px 7.5px #0008;
   position: absolute;
-  width: calc(100% - 30px);
+  width: calc(100% - 40px);
   left: 20px;
   bottom: 20px;
 }

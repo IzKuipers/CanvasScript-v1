@@ -32,6 +32,10 @@ div.variable-pane div.row div.editor-overlay div.line {
   text-align: right;
 }
 
+div.variable-pane div.row div.editor-overlay div.line div.linenr {
+  display: none;
+}
+
 div.variable-pane div.row div.value {
   position: relative;
   flex-grow: 1;
