@@ -1,0 +1,40 @@
+div.variable-pane {
+  padding: 10px;
+  border-right: var(--sec-bg) 1px solid;
+  box-sizing: border-box;
+  height: 100%;
+  overflow-y: auto;
+}
+
+div.variable-pane div.row {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  padding: 2.5px 0;
+  font-size: 16px;
+  padding-left: 5px;
+  font-family: "Poppins", sans-serif;
+  color: var(--fg);
+}
+
+div.variable-pane div.row p.key {
+  margin: 0;
+}
+
+div.variable-pane div.row div.editor-overlay {
+  padding: 0;
+  left: unset;
+  right: 0;
+}
+
+div.variable-pane div.row div.editor-overlay div.line {
+  text-align: right;
+}
+
+div.variable-pane div.row div.value {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}

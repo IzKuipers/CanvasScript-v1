@@ -1,5 +1,6 @@
 div.statusbar {
-  background-color: var(--statusbar-bg);
+  background-color: var(--bg);
+  border: var(--statusbar-bg) 1px solid;
   display: flex;
   gap: 10px;
   height: 50px;
@@ -49,8 +50,9 @@ div.statusbar div.right > button:active {
 
 div.statusbar div.error,
 div.statusbar div.fine {
-  padding: 5px 10px;
+  padding: 4px 10px;
   line-height: 20px;
+  height: 30px;
   box-sizing: border-box;
   background-color: var(--error-bg);
   color: var(--error-fg);

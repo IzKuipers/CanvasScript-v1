@@ -6,6 +6,7 @@ div.topbar {
   color: var(--fg);
   background-color: var(--bg);
   font-family: "Poppins", sans-serif;
+  border-bottom: var(--sec-bg) 1px solid;
 }
 
 div.topbar h3.header {

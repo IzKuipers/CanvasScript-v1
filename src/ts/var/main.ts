@@ -1,3 +1,4 @@
+import { get, writable, type Writable } from "svelte/store";
 import type { VariableStore } from "./interface";
 
 /**
@@ -10,12 +11,22 @@ import type { VariableStore } from "./interface";
  *
  */
 
+export const PublicVariableStore = writable<VariableStore>({});
+
+PublicVariableStore.subscribe((v) => {
+  console.table(v);
+});
+
 export class Variables {
-  private store: VariableStore = {};
+  private store: Writable<VariableStore> = writable<VariableStore>({});
+
+  constructor() {
+    this.store.subscribe((v) => PublicVariableStore.set(v));
+  }
 
   async getAll(): Promise<VariableStore> {
     const result: VariableStore = {};
-    const entries = Object.entries(this.store);
+    const entries = Object.entries(get(this.store));
 
     for (let i = 0; i < entries.length; i++) {
       const key = entries[i][0];
@@ -27,25 +38,31 @@ export class Variables {
     return result;
   }
 
-  get(key: string) {
-    if (!this.store[key]) return key;
+  get(key: string): string {
+    const value = get(this.store)[key];
 
-    return this.store[key];
+    return value || key;
   }
 
   async set(key: string, value: string) {
-    this.store[key] = value;
+    const store = get(this.store);
+
+    store[key] = value;
+
+    this.store.set(store);
   }
 
-  async delete(key: string) {
-    if (!this.store[key]) return false;
+  async delete(key: string): Promise<boolean> {
+    const store = get(this.store);
+
+    if (!store[key]) return false;
 
     await this.set(key, "");
 
     return true;
   }
 
-  replace(str: string) {
+  replace(str: string): string {
     const variables = this.parseInlineNames(str);
 
     if (!variables.length) return str;

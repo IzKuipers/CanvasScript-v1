@@ -1,9 +1,11 @@
+import type { Hex } from "../lang/interface";
+
 export class CanvasMutator {
   context: CanvasRenderingContext2D;
   target: HTMLCanvasElement;
 
-  background: string = "#000000";
-  foreground: string = "#ffffff";
+  background: Hex = "#000000";
+  foreground: Hex = "#ffffff";
   multiplier: number = 0;
 
   constructor() {}
@@ -76,13 +78,13 @@ export class CanvasMutator {
     }
   }
 
-  setColor(color: string) {
+  setColor(color: Hex) {
     this.foreground = color;
     this.context.strokeStyle = this.foreground;
     this.context.fillStyle = this.foreground;
   }
 
-  setBackground(color: string) {
+  setBackground(color: Hex) {
     this.background = color;
     this.context.fillStyle = this.background;
 

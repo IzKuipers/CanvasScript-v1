@@ -10,11 +10,5 @@ export interface Param {
 }
 
 export type ParsedParams = { [key: string]: number | string | boolean };
-
-export type ParamType =
-  | "number"
-  | "boolean"
-  | "string"
-  | "unknown"
-  | "hex"
-  | "any";
+export type ParamType = "number" | "boolean" | "unknown" | "hex" | "any";
+export type Hex = `#${string}`;

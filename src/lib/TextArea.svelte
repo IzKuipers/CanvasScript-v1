@@ -22,7 +22,7 @@
 </script>
 
 {#if content}
-  <Pane>
+  <Pane minSize={40}>
     <div class="editor-wrapper">
       <div>
         <textarea
@@ -33,8 +33,6 @@
           on:input={updateSize}
           on:keydown={updateSize}
           on:keypress={updateSize}
-          cols="80"
-          rows="25"
           class="editor"
         />
         <Overlay {content} {lang} />
