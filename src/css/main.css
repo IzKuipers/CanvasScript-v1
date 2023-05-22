@@ -9,15 +9,29 @@
 @import url("./topbar.css");
 @import url("./variablepane.css");
 
-div#app {
-  background-color: var(--sec-bg);
+div.app {
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+div.app {
+  background-color: var(--bg);
+
+  transform: scale(0.9);
+  transition: all 0.5s;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+div.app.done {
+  transform: scale(1);
+  border-radius: 0;
+}
+
 body {
   margin: 0;
+  transition: none !important;
 }
 
 div.mainframe {

@@ -74,7 +74,7 @@ export class Parser {
 
   getType(segment: string): ParamType {
     try {
-      if (typeof JSON.parse(segment) == "string") return "string";
+      if (typeof JSON.parse(segment) == "string") return "unknown";
     } catch {}
 
     if (!segment) return "unknown";

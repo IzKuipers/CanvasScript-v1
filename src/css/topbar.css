@@ -1,3 +1,6 @@
+@import url("./topbar/tabs.css");
+@import url("./topbar/right.css");
+
 div.topbar {
   height: 60px;
   min-height: 60px;
@@ -13,80 +16,7 @@ div.topbar {
   align-items: center;
 }
 
-div.topbar div.tabs {
-  max-width: 80%;
-  flex-grow: 1;
-  height: 100%;
-  overflow-x: scroll;
-  white-space: nowrap;
-  display: flex;
-  gap: 5px;
-}
-
-div.topbar div.tabs button.tab {
-  height: inherit;
-  border-radius: 5px;
-  border: none;
-  box-sizing: border-box;
-  padding: 5px 15px;
-  padding-right: 10px;
-  display: inline-flex;
-  align-items: center;
-  background-color: transparent;
-  color: var(--fg);
-  gap: 10px;
-  font-family: "Poppins", sans-serif;
-}
-
-div.topbar div.tabs button.tab.active {
-  background-color: var(--button-bg);
-}
-
-div.topbar div.tabs button.tab button.material-icons-round {
-  width: 24px;
-  height: 24px;
-  padding: 0;
-  font-size: 20px;
-  background-color: transparent;
-  border: none;
-  color: var(--fg);
-  opacity: 0;
-}
-
-div.topbar div.tabs button.tab.active button.material-icons-round,
-div.topbar div.tabs button.tab:hover button.material-icons-round {
-  opacity: 1;
-}
-
-div.topbar div.tabs button.tab p.caption {
-  margin: 0;
-}
-
 div.topbar h3.header {
   margin: 0;
   margin-right: 10px;
-}
-
-div.topbar div.right {
-  margin-left: auto;
-  display: flex;
-  gap: 10px;
-}
-
-div.topbar div.right button {
-  width: 35px;
-  height: 35px;
-  padding: 0;
-  background-color: transparent;
-  border: none;
-  border-radius: 50%;
-  color: var(--fg);
-  font-size: 20px;
-}
-
-div.topbar div.right button:hover {
-  background-color: var(--button-hover-bg);
-}
-div.topbar div.right button:active {
-  background-color: var(--button-active-bg);
 }

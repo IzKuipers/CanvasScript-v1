@@ -5,6 +5,7 @@
   import type { CanvasScriptLang } from "../ts/lang/main";
   import Statusbar from "./Statusbar.svelte";
   import { onMount } from "svelte";
+  import { EditorVisible } from "../ts/ui/main";
 
   let editor: HTMLTextAreaElement;
 
@@ -21,7 +22,7 @@
   }
 </script>
 
-{#if content}
+{#if content && $EditorVisible}
   <Pane minSize={40}>
     <div class="editor-wrapper">
       <div>

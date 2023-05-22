@@ -9,15 +9,25 @@
   import Statusbar from "./lib/Statusbar.svelte";
   import TopBar from "./lib/TopBar.svelte";
   import Variables from "./lib/Variables.svelte";
+  import { onMount } from "svelte";
 
   let content = writable<string>("");
   let lang: CanvasScriptLang;
+  let done = false;
+
+  onMount(() => {
+    done = false;
+    setTimeout(() => {
+      done = true;
+    });
+  });
 </script>
 
-<TopBar />
-<Splitpanes class="mainframe">
-  <Variables {lang} />
-  <TextArea {content} {lang} />
-  <Display {content} bind:lang />
-</Splitpanes><!-- 
-<Statusbar /> -->
+<div class="app" class:done>
+  <TopBar />
+  <Splitpanes class="mainframe">
+    <Variables {lang} />
+    <TextArea {content} {lang} />
+    <Display {content} bind:lang />
+  </Splitpanes>
+</div>
