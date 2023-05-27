@@ -15,6 +15,10 @@ div.topbar div.right button {
   font-size: 20px;
 }
 
+div.topbar div.right button:disabled {
+  opacity: 0.5;
+}
+
 div.topbar div.right button:hover {
   background-color: var(--button-hover-bg);
 }

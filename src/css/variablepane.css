@@ -42,3 +42,21 @@ div.variable-pane div.row div.value {
   display: flex;
   justify-content: flex-end;
 }
+
+div.variable-pane div.none {
+  color: var(--fg);
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  opacity: 0.75;
+  line-height: 24px;
+  text-align: center;
+  width: 100%;
+}
+
+div.variable-pane div.none::before {
+  content: "warning";
+  font-family: "Material Icons Round";
+  font-size: 24px;
+  vertical-align: top;
+  margin-right: 10px;
+}

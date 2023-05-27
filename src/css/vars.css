@@ -2,9 +2,9 @@
   --bg: #fff;
   --sec-bg: #eee;
   --statusbar-bg: #e7e7e7;
-  --button-bg: #ccc;
-  --button-hover-bg: #ddd;
-  --button-active-bg: #bbb;
+  --button-bg: #f0f0f0;
+  --button-hover-bg: #e9e9e9;
+  --button-active-bg: #d1d1d1;
   --fg: #333;
   --red: rgb(255, 91, 91);
   --orange: rgb(230, 150, 0);
