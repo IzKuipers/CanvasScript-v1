@@ -12,7 +12,7 @@ div.editor-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  white-space: nowrap;
+  white-space: pre-line;
   overflow: visible;
   width: calc(100% - 3em);
   min-height: 100%;
